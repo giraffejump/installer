@@ -13,11 +13,11 @@ fi
 export TEXTDOMAINDIR=$PROJECT_DIR/locale
 export TEXTDOMAIN=jumpserver-installer
 
-export CONFIG_DIR='/opt/jumpserver/config'
+export CONFIG_DIR='/opt/giraffejump/config'
 export CONFIG_FILE=$CONFIG_DIR/config.txt
 
 # Compose 项目设置
-export COMPOSE_PROJECT_NAME=jms
+export COMPOSE_PROJECT_NAME=giraffe
 # export COMPOSE_HTTP_TIMEOUT=3600
 # export DOCKER_CLIENT_TIMEOUT=3600
 
