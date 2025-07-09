@@ -210,11 +210,11 @@ function get_images() {
     echo "registry.fit2cloud.com/jumpserver/nec:${VERSION}"
     echo "registry.fit2cloud.com/jumpserver/facelive:${VERSION}"
   else
-    echo "jumpserver/core:${VERSION}"
-    echo "jumpserver/koko:${VERSION}"
-    echo "jumpserver/lion:${VERSION}"
-    echo "jumpserver/chen:${VERSION}"
-    echo "jumpserver/web:${VERSION}"
+    echo "giraffejump/core:${VERSION}"
+    echo "giraffejump/koko:${VERSION}"
+    echo "giraffejump/lion:${VERSION}"
+    echo "giraffejump/chen:${VERSION}"
+    echo "giraffejump/web:${VERSION}"
   fi
 }
 
