@@ -217,22 +217,22 @@ function set_service() {
   rdp_port=$(get_config RDP_PORT)
   use_xpack=$(get_config_or_env USE_XPACK)
   confirm="n"
-  read_from_input confirm "$(gettext 'Do you need to customize the JumpServer external port')?" "y/n" "${confirm}"
+  read_from_input confirm "$(gettext 'Do you need to customize the GiraffeJump external port')?" "y/n" "${confirm}"
   if [[ "${confirm}" == "y" ]]; then
-    read_from_input http_port "$(gettext 'JumpServer web port')" "" "${http_port}"
+    read_from_input http_port "$(gettext 'GiraffeJump web port')" "" "${http_port}"
     set_config HTTP_PORT "${http_port}"
 
     if [[ "${use_xpack}" == "1" ]]; then
-      read_from_input ssh_port "$(gettext 'JumpServer ssh port')" "" "${ssh_port}"
+      read_from_input ssh_port "$(gettext 'GiraffeJump ssh port')" "" "${ssh_port}"
       set_config SSH_PORT "${ssh_port}"
-      read_from_input rdp_port "$(gettext 'JumpServer rdp port')" "" "${rdp_port}"
+      read_from_input rdp_port "$(gettext 'GiraffeJump rdp port')" "" "${rdp_port}"
       set_config RDP_PORT "${rdp_port}"
     fi
   fi
 }
 
 function init_db() {
-  echo_yellow "\n6. $(gettext 'Init JumpServer Database')"
+  echo_yellow "\n6. $(gettext 'Init GiraffeJump Database')"
   if ! perform_db_migrations; then
     log_error "$(gettext 'Failed to change the table structure')!"
     exit 1
