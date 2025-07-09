@@ -74,8 +74,8 @@ function post_install() {
   fi
 
   echo_yellow "\n $(gettext 'More information')"
-  echo "$(gettext 'Official Website'): https://www.jumpserver.com/"
-  echo "$(gettext 'Documentation'): https://www.jumpserver.com/docs"
+  echo "$(gettext 'Official Website'): https://giraffe.ge/"
+  echo "$(gettext 'Documentation'): https://giraffe.ge"
   echo -e "\n"
 }
 
@@ -94,8 +94,8 @@ function main() {
   if ! bash "${BASE_DIR}/3_load_images.sh"; then
     exit 1
   fi
-  echo_green "\n>>> $(gettext 'Install and Configure JumpServer')"
-  if ! bash "${BASE_DIR}/1_config_jumpserver.sh"; then
+  echo_green "\n>>> $(gettext 'Install and Configure GiraffeJump')"
+  if ! bash "${BASE_DIR}/1_config_giraffejump.sh"; then
     exit 1
   fi
   installation_log "install"
