@@ -4,31 +4,31 @@
 LANGS="zh_CN en zh_Hant"
 
 function init_message() {
-    find . -iname "*.sh" | xargs  xgettext --output=/tmp/jumpserver-installer.pot --from-code=UTF-8
+    find . -iname "*.sh" | xargs  xgettext --output=/tmp/giraffejump-installer.pot --from-code=UTF-8
 
     for lang in $LANGS; do
         mkdir -p locale/${lang}/LC_MESSAGES
-        msginit --input=/tmp/jumpserver-installer.pot --locale=locale/${lang}/LC_MESSAGES/jumpserver-installer.po
+        msginit --input=/tmp/giraffejump-installer.pot --locale=locale/${lang}/LC_MESSAGES/giraffejump-installer.po
     done
 }
 
 function make_message() {
-    find . -iname "*.sh" | xargs  xgettext --output=/tmp/jumpserver-installer.pot --from-code=UTF-8
+    find . -iname "*.sh" | xargs  xgettext --output=/tmp/giraffejump-installer.pot --from-code=UTF-8
 
     for lang in $LANGS; do
-        msginit --input=/tmp/jumpserver-installer.pot --locale=locale/${lang}/LC_MESSAGES/jumpserver-installer-tmp.po
-        msgmerge -U locale/${lang}/LC_MESSAGES/jumpserver-installer-tmp.po /tmp/jumpserver-installer.pot
+        msginit --input=/tmp/giraffejump-installer.pot --locale=locale/${lang}/LC_MESSAGES/giraffejump-installer-tmp.po
+        msgmerge -U locale/${lang}/LC_MESSAGES/giraffejump-installer-tmp.po /tmp/giraffejump-installer.pot
     done
 
     for lang in $LANGS; do
-        rm -f locale/${lang}/LC_MESSAGES/jumpserver-installer-tmp.po
-        rm -f locale/${lang}/LC_MESSAGES/jumpserver-installer.po\~
+        rm -f locale/${lang}/LC_MESSAGES/giraffejump-installer-tmp.po
+        rm -f locale/${lang}/LC_MESSAGES/giraffejump-installer.po\~
     done
 }
 
 function compile_message() {
     for lang in $LANGS; do
-        msgfmt --output-file=locale/${lang}/LC_MESSAGES/jumpserver-installer.mo locale/${lang}/LC_MESSAGES/jumpserver-installer.po
+        msgfmt --output-file=locale/${lang}/LC_MESSAGES/giraffejump-installer.mo locale/${lang}/LC_MESSAGES/giraffejump-installer.po
     done
 }
 
