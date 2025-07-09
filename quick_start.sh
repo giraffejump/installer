@@ -50,8 +50,8 @@ function get_installer() {
 
 function config_installer() {
   cd /opt/giraffejump-installer-${VERSION} || exit 1
-  ./jmsctl.sh install
-  ./jmsctl.sh start
+  ./giraffectl.sh install
+  ./giraffectl.sh start
 }
 
 function main(){
