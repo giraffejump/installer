@@ -452,10 +452,10 @@ function prepare_set_redhat_firewalld() {
 function prepare_config() {
   cd "${PROJECT_DIR}" || exit 1
   if check_root; then
-    echo -e "#!/usr/bin/env bash\n#" > /usr/bin/jmsctl
-    echo -e "cd ${PROJECT_DIR}" >> /usr/bin/jmsctl
-    echo -e './jmsctl.sh $@' >> /usr/bin/jmsctl
-    chmod 755 /usr/bin/jmsctl
+    echo -e "#!/usr/bin/env bash\n#" > /usr/bin/giraffectl
+    echo -e "cd ${PROJECT_DIR}" >> /usr/bin/giraffectl
+    echo -e './giraffectl.sh $@' >> /usr/bin/giraffectl
+    chmod 755 /usr/bin/giraffectl
   fi
 
   echo_yellow "1. $(gettext 'Check Configuration File')"
