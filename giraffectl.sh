@@ -153,13 +153,13 @@ function main() {
   if [[ "${OS}" == 'Darwin' ]]; then
     echo
     echo "$(gettext 'Unsupported Operating System Error')"
-    echo "$(gettext 'macOS installer please see'): https://github.com/jumpserver/Dockerfile"
+    echo "$(gettext 'macOS installer please see'): https://github.com/giraffejump/Dockerfile"
     exit 0
   fi
   if [[ "${OS}" =~ MINGW.* ]]; then
     echo
     echo "$(gettext 'Unsupported Operating System Error')"
-    echo "$(gettext 'Windows installer please see'): https://github.com/jumpserver/Dockerfile"
+    echo "$(gettext 'Windows installer please see'): https://github.com/giraffejump/Dockerfile"
     exit 0
   fi
 
@@ -173,7 +173,7 @@ function main() {
   fi
   case "${action}" in
   install)
-    bash "${SCRIPT_DIR}/4_install_jumpserver.sh"
+    bash "${SCRIPT_DIR}/4_install_giraffejump.sh"
     ;;
   upgrade)
     bash "${SCRIPT_DIR}/7_upgrade.sh" "$target"
@@ -186,7 +186,7 @@ function main() {
     ;;
   reconfig)
     ${EXE} down -v
-    bash "${SCRIPT_DIR}/1_config_jumpserver.sh"
+    bash "${SCRIPT_DIR}/1_config_giraffejump.sh"
     ;;
   start)
     start
